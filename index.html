@@ -12,7 +12,7 @@
 <body>
     <fieldset>
         <h1>Calculadora de IMC</h1>
-        <p>Indique seu sexo:</p>
+        <p>Sexo:</p>
         <div>
             <input type="radio" id="masculino" name="sexo" value="masculino" />
             <label for="masculino">Masculino</label>
@@ -22,9 +22,9 @@
             <label for="feminino">Feminino</label>
         </div>
 
-        <p>Indique a sua altura:</p>
+        <p>Altura:</p>
         <input type="number" id="altura" />
-        <p>Indique o seu peso:</p>
+        <p>Peso:</p>
         <input type="number" id="peso" /> <br />
 
         <button style="margin-bottom: 15px;" onclick="Calcular()" id="btn">Calcular</button>
@@ -46,7 +46,7 @@
             var mostrarTexto = document.getElementById("mostrarTexto");
 
             var alturaFinal = altura *= altura;
-            var resultado_conta = (peso / alturaFinal) * 10000;
+            var resultado_conta = (peso / alturaFinal) ;
 
             if (valor_radio === "masculino") {
                 if (resultado_conta < 20) {
@@ -81,162 +81,3 @@
 </body>
 
 </html>
-<!--
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Calculadora de IMC</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        
-        h1 {
-            text-align: center;
-        }
-        
-        form {
-            margin: 0 auto;
-            width: 400px;
-        }
-        
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        
-        input[type="text"] {
-            width: 100%;
-            padding: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        
-        input[type="submit"] {
-            margin-top: 10px;
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        #result {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        
-        .underweight {
-            background-color: #fadbd8;
-            color: #e74c3c;
-        }
-        
-        .normal {
-            background-color: #d5f5e3;
-            color: #2ecc71;
-        }
-        
-        .overweight {
-            background-color: #f9e79f;
-            color: #f1c40f;
-        }
-        
-        .obese {
-            background-color: #f5b7b1;
-            color: #e74c3c;
-        }
-    </style>
-</head>
-
-<body>
-    <h1>Calculadora de IMC</h1>
-    <form>
-        <label for="gender">Sexo:</label>
-        <input type="radio" name="gender" value="male" id="male" /><label for="male">Masculino</label
-      >
-      <input type="radio" name="gender" value="female" id="female" /><label
-        for="female"
-        >Feminino</label
-      >
-
-      <label for="weight">Peso (kg):</label>
-        <input type="text" name="weight" id="weight" />
-
-        <label for="height">Altura (m):</label>
-        <input type="text" name="height" id="height" />
-
-        <input type="submit" value="Calcular" onclick="calculate()" />
-    </form>
-
-    <div id="result"></div>
-
-    <script>
-        function calculate() {
-            var gender = document.querySelector(
-                'input[name="gender"]:checked'
-            ).value;
-            var weight = parseFloat(document.getElementById("weight").value);
-            var height = parseFloat(document.getElementById("height").value);
-            var bmi = weight / (height * height);
-
-            var resultDiv = document.getElementById("result");
-
-            if (isNaN(bmi)) {
-                resultDiv.innerHTML = "Por favor, preencha os campos corretamente.";
-                resultDiv.className = "";
-                return;
-            }
-
-            var category;
-            if (gender === "male") {
-                if (bmi < 20.7) {
-                    category = "Abaixo do peso";
-                    resultDiv.className = "underweight";
-                } else if (bmi < 26.4) {
-                    category = "Peso normal";
-                    resultDiv.className = "normal";
-                } else if (bmi < 27.8) {
-                    category = "Levemente acima do peso";
-                    resultDiv.className = "overweight";
-                } else if (bmi < 31.1) {
-                    category = "Obesidade grau I";
-                    resultDiv.className = "obese";
-                } else {
-                    category = "Obesidade grau II ou III";
-                    resultDiv.className = "obese";
-                }
-            } else {
-                if (bmi < 19.1) {
-                    category = "Abaixo do peso";
-                    resultDiv.className = "underweight";
-                } else if (bmi < 25.8) {
-                    category = "Peso normal";
-                    resultDiv.className = "normal";
-                } else if (bmi < 27.3) {
-                    category = "Levemente acima do peso";
-                    resultDiv.className = "overweight";
-                } else if (bmi < 32.3) {
-                    category = "Obesidade grau I";
-                    resultDiv.className = "obese";
-                } else {
-                    category = "Obesidade grau II ou III";
-                    resultDiv.className = "obese";
-                }
-            }
-            resultDiv.innerHTML =
-                "Seu IMC é " +
-                bmi.toFixed(2) +
-                ". Isso é considerado " +
-                category +
-                ".";
-        }
-    </script>
-</body>
-
-</html>
--->
